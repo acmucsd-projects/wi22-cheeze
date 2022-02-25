@@ -31,29 +31,19 @@ def collision(flappy_position, obstacle_position):
     return False
 
 
-
+index = 0
 flappy_position = [200, 250]
-prev_flappy_pos = [0, 0]
 obstacle_position = deque([create_obstacle()])
 img = np.zeros((500,500,3),dtype='uint8')
-prev_score = 0
 score = 0
 
 while True:
-    #img = np.zeros((500,500,3),dtype='uint8')
-    #temp_img = copy.deepcopy(img)
     cv2.imshow('a',img)
     cv2.waitKey(1)
-    cv2.rectangle(img,(prev_flappy_pos[0],prev_flappy_pos[1]),(prev_flappy_pos[0]+20,prev_flappy_pos[1]+20),(0,0,0),3)
+    img = np.zeros((500,500,3),dtype='uint8')
     cv2.rectangle(img,(flappy_position[0],flappy_position[1]),(flappy_position[0]+20,flappy_position[1]+20),(0,0,255),3)
-    cv2.putText(img,'{}'.format(prev_score),(450,50), font, 1,(0,0,0),2,cv2.LINE_AA)
-    cv2.putText(img,'{}'.format(score),(450,50), font, 1,(255,255,255),2,cv2.LINE_AA)
+    cv2.putText(img,'{}'.format(score),(350,50), font, 1,(255,255,255),2,cv2.LINE_AA)
     for idx, position in enumerate(obstacle_position):
-        #obs_width = min(50, 500 - obstacle_position[0][0])
-
-        cv2.rectangle(img,(position[0][0]+5, position[0][1]),(position[0][0]+55, 0),(0,0,0),3)
-        cv2.rectangle(img,(position[1][0]+5, position[1][1]),(position[1][0]+55, 500),(0,0,0),3)
-        
         cv2.rectangle(img,(position[0][0], position[0][1]),(position[0][0]+50, 0),(0,255,0),3)
         cv2.rectangle(img,(position[1][0], position[1][1]),(position[1][0]+50, 500),(0,255,0),3)
 
@@ -74,8 +64,6 @@ while True:
         break
     else:
         button_direction = -1
-
-    prev_flappy_pos = list(flappy_position)
 
     if button_direction == 3:
         flappy_position[1] -= STROKE_STRENGTH
@@ -103,14 +91,14 @@ while True:
 
     if obstacle_position[0][0][0]+50 <= 0:
         obstacle_position.popleft()
-        prev_score = int(score)
-        score += 1
+        index -= 1
     
     if obstacle_position[-1][0][0] <= 300:
         obstacle_position.append(create_obstacle())
-
-    #if flappy_position[0] > obstacle_position[0][0][0] + 50:
         
-    
 
-    #img = copy.deepcopy(temp_img)
+    if flappy_position[0] > obstacle_position[index][0][0] + 50:
+        index += 1
+        score += 1
+
+cv2.destroyAllWindows()
