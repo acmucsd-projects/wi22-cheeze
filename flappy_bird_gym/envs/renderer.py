@@ -156,7 +156,3 @@ class FlappyBirdRenderer:
         self.display.blit(self.surface, [0, 0])
         pygame.display.update()
 
-        # Sounds:
-        if self.audio_on and self.game.sound_cache is not None:
-            sound_name = self.game.sound_cache
-            self.sounds[sound_name].play()
