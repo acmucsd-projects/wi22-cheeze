@@ -6,7 +6,6 @@ import os
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 
 # Exporting envs:
-from flappy_bird_gym.envs.flappy_bird_env_rgb import FlappyBirdEnvRGB
 from flappy_bird_gym.envs.flappy_bird_env_simple import FlappyBirdEnvSimple
 
 # Exporting original game:
@@ -23,14 +22,8 @@ register(
     entry_point="flappy_bird_gym:FlappyBirdEnvSimple",
 )
 
-register(
-    id="FlappyBird-rgb-v0",
-    entry_point="flappy_bird_gym:FlappyBirdEnvRGB",
-)
-
 # Main names:
 __all__ = [
     make.__name__,
-    FlappyBirdEnvRGB.__name__,
     FlappyBirdEnvSimple.__name__,
 ]

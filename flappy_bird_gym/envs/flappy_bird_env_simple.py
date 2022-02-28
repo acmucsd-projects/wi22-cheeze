@@ -1,3 +1,7 @@
+""" Implementation of a Flappy Bird OpenAI Gym environment that yields simple
+numerical information about the game's state as observations.
+"""
+
 from typing import Dict, Tuple, Optional, Union
 
 import gym
