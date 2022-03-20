@@ -116,7 +116,7 @@ class FlappyBirdEnvSimple(gym.Env):
         alive = self._game.update_state(action)
         obs = self._get_observation()
 
-        reward = 1
+        reward = 1 - abs(obs[1])
 
         done = not alive
         info = {"score": self._game.score}
