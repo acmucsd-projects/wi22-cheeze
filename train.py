@@ -15,11 +15,11 @@ def main():
     # check_env(env)
 
     # model = A2C('CnnPolicy', env).learn(total_timesteps=1000)
-    # model = DQN('MlpPolicy', env, verbose=1)
-    model = PPO('CnnPolicy', env, verbose=1)
+    model = DQN('MlpPolicy', env, verbose=1)
+    # model = PPO('CnnPolicy', env, verbose=1)
     model.learn(total_timesteps=int(2e5))
-    model.save("PPO_flappy")
-    # model.save("DQN_flappy")
+    # model.save("PPO_flappy")
+    model.save("DQN_flappy")
     # model.save("A2C_flappy")
 
     env.close()

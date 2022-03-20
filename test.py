@@ -17,12 +17,6 @@ def main():
     # Read Model
     # model = DQN.load("DQN_flappy", env=env)
     model = PPO.load("PPO_flappy", env=env)
-    try:
-        evaluate_policy(model, model.get_env(), n_eval_episodes=20)
-        # mean_reward, std_reward = evaluate_policy(model, model.get_env(), n_eval_episodes=20)
-        # print(mean_reward, std_reward)
-    except:
-        print("ERROR")
 
     while True:
         env.render()
