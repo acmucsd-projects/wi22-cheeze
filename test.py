@@ -31,7 +31,8 @@ def main():
 
         score += reward
         print(f"Obs: {obs}\n"
-              f"Score: {score}\n")
+              f"Reward: {score}\n"
+              f"Score: {info}\n")
 
         time.sleep(1 / 30)
         env.render()
