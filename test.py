@@ -7,7 +7,8 @@ from stable_baselines3 import PPO
 
 
 def main():
-    env = flappy_bird_gym.make("FlappyBird-v0")
+    # env = flappy_bird_gym.make("FlappyBird-v0")
+    env = flappy_bird_gym.make("FlappyBird-v1")
     score = 0
     obs = env.reset()
 
@@ -16,7 +17,8 @@ def main():
 
     # Read Model
     # model = DQN.load("DQN_flappy", env=env)
-    model = PPO.load("PPO_flappy", env=env)
+    # model = PPO.load("PPO_flappy", env=env)
+    model = PPO.load("PPO_flappy_sparse_dense", env=env)
 
     while True:
         env.render()
