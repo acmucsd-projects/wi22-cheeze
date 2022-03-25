@@ -1,2 +1,3 @@
 from flappy_bird_gym.envs.flappy_bird_env_simple import FlappyBirdEnvSimple
 from flappy_bird_gym.envs.flappy_bird_env_simple import FlappyBirdEnvAdvance
+from flappy_bird_gym.envs.flappy_bird_env_rgb import FlappyBirdEnvRGB

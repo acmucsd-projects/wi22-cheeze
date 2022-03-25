@@ -248,7 +248,6 @@ class FlappyBirdEnvAdvance(gym.Env):
         if self._renderer is not None:
             self._renderer.game = self._game
 
-        print(self.curr_score)
         self.curr_score = 0
         return self._get_observation()
 

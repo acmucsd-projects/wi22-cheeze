@@ -28,6 +28,11 @@ register(
     entry_point="flappy_bird_gym:FlappyBirdEnvAdvance",
 )
 
+register(
+    id="FlappyBird-rgb-v0",
+    entry_point="flappy_bird_gym:FlappyBirdEnvRGB",
+)
+
 # Main names:
 __all__ = [
     make.__name__,
