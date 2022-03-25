@@ -50,7 +50,8 @@ class FlappyBirdEnvRGB(gym.Env):
 
     def _get_observation(self):
         self._renderer.draw_surface(show_score=False)
-        return pygame.surfarray.array3d(self._renderer.surface)
+        arr = pygame.surfarray.array3d(self._renderer.surface)
+        return arr
 
     def reset(self):
         """ Resets the environment (starts a new game).
@@ -85,7 +86,7 @@ class FlappyBirdEnvRGB(gym.Env):
             reward = 2          # sparse + dense
             self.curr_score += 1
         else:
-            reward = 1 - abs(obs[1])      # sparse + dense
+            reward = 1      # sparse + dense
 
         done = not alive
         info = {"score": self._game.score}
