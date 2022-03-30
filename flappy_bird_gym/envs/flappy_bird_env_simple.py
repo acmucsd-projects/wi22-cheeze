@@ -577,10 +577,10 @@ class FlappyBirdEnvFourObsSparse(gym.Env):
         info = {"score": self._game.score}
 
         if self._game.score - self.curr_score == 1:
-            reward = 1  # sparse
+            reward = 3  # sparse
             self.curr_score += 1
         else:
-            reward = 0  # sparse + dense
+            reward = 1  # dense
 
         done = not alive
 

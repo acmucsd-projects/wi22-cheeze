@@ -26,6 +26,7 @@ def main():
     # model = PPO.load("PPO_flappy_sparse_dense", env=env)
     # model = PPO.load("PPO_flappy_Three_Obs", env=env)
     model = PPO.load("PPO_flappy_Four_Obs", env=env)
+    # model = PPO.load("PPO_flappy_Four_Obs_2", env=env)
     # model = PPO.load("PPO_flappy_Four_Obs_Sparse", env=env)
     # model = PPO.load("PPO_flappy_RGB_sparse_dense", env=env)
 
