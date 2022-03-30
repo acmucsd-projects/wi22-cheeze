@@ -14,7 +14,7 @@ def main():
     env.reset()
 
     # Simple check on the environment
-    check_env(env)
+    # check_env(env)
 
     # model = PPO('CnnPolicy', env, verbose=1)        # CNN for RGB vector input
     # # model = PPO.load("PPO_flappy", env=env)

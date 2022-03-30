@@ -11,6 +11,7 @@ import pygame
 from flappy_bird_gym.envs.game_logic import FlappyBirdLogic
 from flappy_bird_gym.envs.game_logic import PIPE_WIDTH, PIPE_HEIGHT
 from flappy_bird_gym.envs.game_logic import PLAYER_WIDTH, PLAYER_HEIGHT
+# from flappy_bird_gym.envs.game_logic import 
 from flappy_bird_gym.envs.renderer import FlappyBirdRenderer
 
 
@@ -345,12 +346,12 @@ class FlappyBirdEnvFourObservations(gym.Env):
             h_dist,
             v_dist,
             h_dist_2,
-            v_dist_2,
-        ])
+            v_dist_2])
 
     def step(self,
              action: Union[FlappyBirdLogic.Actions, int],
              ) -> Tuple[np.ndarray, float, bool, Dict]:
+
         """ Given an action, updates the game state.
 
         Args:
@@ -369,7 +370,6 @@ class FlappyBirdEnvFourObservations(gym.Env):
         """
         alive = self._game.update_state(action)
         obs = self._get_observation()
-
         info = {"score": self._game.score}
 
         if self._game.score - self.curr_score == 1:

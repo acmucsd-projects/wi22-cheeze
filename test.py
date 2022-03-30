@@ -19,6 +19,7 @@ def main():
 
     # Read Model
     # model = DQN.load("DQN_flappy", env=env)
+
     # model = PPO.load("PPO_flappy", env=env)
     # model = PPO.load("PPO_flappy_sparse_dense", env=env)
     model = PPO.load("PPO_flappy_Four_Obs", env=env)
