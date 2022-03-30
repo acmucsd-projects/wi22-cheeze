@@ -8,6 +8,7 @@ os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 # Exporting envs:
 from flappy_bird_gym.envs.flappy_bird_env_simple import FlappyBirdEnvSimple
 from flappy_bird_gym.envs.flappy_bird_env_simple import FlappyBirdEnvAdvance
+from flappy_bird_gym.envs.flappy_bird_env_simple import FlappyBirdEnvFourObservations
 from flappy_bird_gym.envs.flappy_bird_env_rgb import FlappyBirdEnvRGB
 
 # Exporting original game:
@@ -30,6 +31,11 @@ register(
 )
 
 register(
+    id="FlappyBird-v2",
+    entry_point="flappy_bird_gym:FlappyBirdEnvFourObservations",
+)
+
+register(
     id="FlappyBird-rgb-v0",
     entry_point="flappy_bird_gym:FlappyBirdEnvRGB",
 )
@@ -38,5 +44,7 @@ register(
 __all__ = [
     make.__name__,
     FlappyBirdEnvSimple.__name__,
+    FlappyBirdEnvAdvance.__name__,
+    FlappyBirdEnvFourObservations.__name__,
     FlappyBirdEnvRGB.__name__,
 ]
