@@ -4,6 +4,8 @@ The official ACM AI Team Cheeze repository.
 
 Create custom OpenAI gym environment for flappy bird and trained [stable-baselines3 PPO](https://stable-baselines3.readthedocs.io/en/master/modules/ppo.html) model to play
 
+![](Flappy.gif)
+
 ## Table of Contents:
 - [1. Resources](https://github.com/acmucsd-projects/wi22-cheeze/blob/main/README.md#1-resources)
 - [2. Getting Started](https://github.com/acmucsd-projects/wi22-cheeze/blob/main/README.md#2-getting-started)
