@@ -58,7 +58,7 @@ Run trained model:
 ```bash
 python3 test.py
 ```
-Alternatively, you can change the environment in test and models we trained followed with .zip files
+Alternatively, you can change the environment in test and models we trained followed with .zip files, the best model we have trained so far is PPO_flappy_Four_Obs.zip
 
 Train you own model:
 You can edit/add more environment within flappy_bird_gym, and register the environment within \__init__.py.
