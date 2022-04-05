@@ -72,7 +72,7 @@ Alternatively, you can edit train.py to train your own models within your custom
 
 To train a good model for playing flappy bird, the biggest factor to be considered is reward function. The naive version of our model was using +1 per step to encourage the survival of the bird, however, it has never been through the first gap but keep flying upward. Therefore, we used 1 - abs(v_dist) instead, so the bird doesn't go too far from the gap. Adding sparse reward, for example the score of the game with the dense reward is helpful. However, using sparse reward individually didn't performed well in this project. 
 
-The second factor to be considered is the observation space. We've only considered the h_dist and v_dist of the first pipe at the beginning, and achived much better result adding the same observations of the second set of pipes. There are more observations you can try, for exa,ple the vertical speed of the bird, however it didn't boost the performance significantly in our case.
+The second factor to be considered is the observation space. We've only considered the h_dist and v_dist of the first gap at the beginning, and achived much better result adding the same observations of the second gap. There are more observations you can try, for exa,ple the vertical speed of the bird, however it didn't boost the performance significantly in our case.
 
 
 ## Author Info
