@@ -9,9 +9,8 @@ Create custom OpenAI gym environment for flappy bird and trained [stable-baselin
 ## Table of Contents:
 - [1. Resources](https://github.com/acmucsd-projects/wi22-cheeze/blob/main/README.md#1-resources)
 - [2. Getting Started](https://github.com/acmucsd-projects/wi22-cheeze/blob/main/README.md#2-getting-started)
-- [3. Structure](https://github.com/acmucsd-projects/wi22-cheeze/blob/main/README.md#3-structure)
-- [4. Difficulties](https://github.com/acmucsd-projects/wi22-cheeze/blob/main/README.md#4-difficulties)
-- [5. Author Info](https://github.com/acmucsd-projects/wi22-cheeze/blob/main/README.md#5-author-info)
+- [3. Difficulties](https://github.com/acmucsd-projects/wi22-cheeze/blob/main/README.md#4-difficulties)
+- [4. Author Info](https://github.com/acmucsd-projects/wi22-cheeze/blob/main/README.md#5-author-info)
 
 ## 1. Resources
 
@@ -61,23 +60,27 @@ python3 test.py
 Alternatively, you can change the environment in test and models we trained followed with .zip files, the best model we have trained so far is PPO_flappy_Four_Obs.zip
 
 Train you own model:
-You can edit/add more environment within flappy_bird_gym, and register the environment within \__init__.py.
-Then, you can edit train.py to train your own models within your custom environments.
+You can edit/add more environment within flappy_bird_gym, and register the environment within \__init__.py. 
+The simple environments consists of observations with raw numbers, h_dist is the horizontal distance between the bird and the first pipe, while d_dist is the vertical distance between the bird and the first gap. Several different reward functions are build upon them. Additionally, for the last environment we also add the same obervations for the second set of pipes into the observation space, to give the model more ability of prediction. 
 
-## 3. Structure
+The RGB environment consists of using RGB output of the game by frames for training in CNNPolicy, however, it's still working in progress.
 
-[Insert some text on the structure of this repo and how everything is organized.]
+Alternatively, you can edit train.py to train your own models within your custom environments.
 
-## 4. Difficulties
 
-[Insert some text on the difficulties you faced and how you solved them (images and GIFs are awesome).]
+## Difficulties
 
-## 5. Author Info
+To train a good model for playing flappy bird, the biggest factor to be considered is reward function. The naive version of our model was using +1 per step to encourage the survival of the bird, however, it has never been through the first gap but keep flying upward. Therefore, we used 1 - abs(v_dist) instead, so the bird doesn't go too far from the gap. Adding sparse reward, for example the score of the game with the dense reward is helpful. However, using sparse reward individually didn't performed well in this project. 
+
+The second factor to be considered is the observation space. We've only considered the h_dist and v_dist of the first pipe at the beginning, and achived much better result adding the same observations of the second set of pipes. There are more observations you can try, for exa,ple the vertical speed of the bird, however it didn't boost the performance significantly in our case.
+
+
+## Author Info
 
 [Insert your info]
 
 - Stone (Advisor)
 - Xing Hong [LinkedIn](https://www.linkedin.com/in/xing-hong-143b69214/) | [GitHub](https://github.com/TIMHX)
-- Tristin
-- Mohak Vaswani
-- Saathvik
+- Tristin Xie [LinkedIn](https://www.linkedin.com/in/tristinxie/) | [Website](https://www.tristinxie.com/)
+- Mohak Vaswani 
+- Saathvik Dirisala [LinkedIn](https://www.linkedin.com/in/tristinxie/) | [Github](https://github.com/saathvikpd)
