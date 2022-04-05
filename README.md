@@ -81,9 +81,6 @@ The second factor to be considered is the observation space. We've only consider
 
 - Stone (Advisor)
 - Xing Hong [LinkedIn](https://www.linkedin.com/in/xing-hong-143b69214/) | [GitHub](https://github.com/TIMHX)
-- 
 - Tristin Xie [LinkedIn](https://www.linkedin.com/in/tristinxie/) | [Website](https://www.tristinxie.com/)
-- 
 - Mohak Vaswani 
-- 
 - Saathvik Dirisala [LinkedIn](https://www.linkedin.com/in/tristinxie/) | [Github](https://github.com/saathvikpd)
